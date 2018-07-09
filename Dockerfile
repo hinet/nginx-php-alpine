@@ -46,7 +46,7 @@ RUN sed -i "s/;cgi.force_redirect = 1/cgi.force_redirect = 0/g" /etc/php5/php.in
 RUN sed -i "s/;cgi.fix_pathinfo=1/cgi.fix_pathinfo = 1/g" /etc/php5/php.ini
 RUN sed -i "s/;fastcgi.impersonate = 1/fastcgi.impersonate = 1/g" /etc/php5/php.ini
 
-EXPOSE 8000 9000
+EXPOSE 80
 CMD ["/usr/bin/supervisord", "-c", "/etc/supervisor/conf.d/supervisord.conf"]
 
 RUN mkdir -p /run/nginx
